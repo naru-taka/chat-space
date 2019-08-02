@@ -52,6 +52,6 @@
 |group_id|integer|null: felse, foreign_key: true|
 
 ###Assosiation
-- has_many :users, through: :users_groups
-- has_many :groups, through: :users_groups
+- belong_to :user
+- belong_to :group
 
