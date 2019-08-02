@@ -52,8 +52,8 @@ Things you may want to cover:
 |group_id|integer|null: felse, foreign_key: true|
 
 ###Assosiation
--belong_to :group
--belong_to :user
+- belong_to :group
+- belong_to :user
 
 # users_groupsテーブル
 
@@ -63,8 +63,8 @@ Things you may want to cover:
 |group_id|integer|null: felse, foreign_key: true|
 
 ###Assosiation
--has_many :users, through: :users_groups
--has_many :groups, through: :users_groups
+- has_many :users, through: :users_groups
+- has_many :groups, through: :users_groups
 
 * Database initialization
 
