@@ -2,8 +2,7 @@
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|integer|null: false, foreign_key: true|
-|message_id|text|null: false,forien_key: true|
+|name|string|null: false, funique: true|
 
 ###Association
 - has_many :messages
