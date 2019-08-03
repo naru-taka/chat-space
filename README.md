@@ -25,6 +25,8 @@
 |------|----|------|
 |user_id|integer|null: felse, foreign_key: true|
 |group_id|integer|null: felse, foreign_key: true|
+|image|string|
+|body|text|
 
 ###Assosiation
 - belong_to :group
