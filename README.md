@@ -2,27 +2,20 @@
 
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false, funique: true|
+|name|string|null: false, unique: true|
 
 ###Association
 - has_many :messages
 - has_many :users, through: :users_groups
 - has_many :users_groups
 
-### Association
-- belongs_to :group
-- belongs_to :user
-
 # usersテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|comment_id|text|null: felse, foreign_key: true|
-|image_id|string|null: felse, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: felse, unique: true|
 
 ###Assosiation
-- has_many :members
 - has_many :messages
 - has_many :groups, through: :users_groups
 
