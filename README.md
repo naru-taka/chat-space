@@ -13,7 +13,7 @@
 
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: felse, unique: true|
+|name|string|null: felse, unique: true, index: true|
 
 ###Assosiation
 - has_many :messages
