@@ -19,13 +19,17 @@
     font-size: 16px;
     line-height: 100px;
     &__group {
-      color: $White;
       float: left;
+      .icon {
+        color: $White;
+      }
     }
     &__user {
-      color: $White;
       float: right;
       padding-left: 5px;
+      .icon {
+        color: $White;
+      }
     }
   }
 }
