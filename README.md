@@ -30,8 +30,8 @@
 |body|text|
 
 ###Assosiation
-- belong_to :group
-- belong_to :user
+- belongs_to :group
+- belongs_to :user
 
 # group_usersテーブル
 
@@ -41,6 +41,6 @@
 |group_id|integer|null: felse, foreign_key: true|
 
 ###Assosiation
-- belong_to :user
-- belong_to :group
+- belongs_to :user
+- belongs_to :group
 
