@@ -1,24 +1,4 @@
--# .header
--#   .alert
--#     alert message
-
-.chat-side
-  .side__header
-    %h3.side__header__box
-      = current_user.name
-    %ul.side__header__action
-      %li.side__header__action__group
-        = link_to do
-          = fa_icon 'pencil-square-o', class: 'icon'
-      %li.side__header__action__user
-        = link_to edit_user_path(current_user) do
-          = fa_icon 'cog', class: 'icon'
-       
-  .groups
-    .groups__group-name
-      group name
-    .groups__group-message
-      group message
+= render 'shared/chat-side'
 
 .chat-main
   .main__header
@@ -39,7 +19,7 @@
           20xx/xx/xx
       .message__text
         message text
- 
+
   .form
     %form
       %input.form__message
@@ -48,4 +28,3 @@
           = fa_icon 'picture-o', class: 'icon'
           %input.hidden{type: 'file'}
       %input.form__submit{type: 'submit', value: 'Send'}
-      
