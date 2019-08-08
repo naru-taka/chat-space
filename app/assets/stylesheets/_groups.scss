@@ -2,6 +2,7 @@
   background-color: #2f3e51;
   height: calc(100vh - 100px);
   padding: 20px 20px 0;
+  box-sizing: border-box;
 
   &__group-name{
     color: $White;

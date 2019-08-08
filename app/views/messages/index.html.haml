@@ -7,24 +7,18 @@
         current group name
       .main__header__leftbox__member-list
         current menbers name    
-    .main__header__rightbox
-      %a.edit-btn Edit
+    
+    = link_to edit_group_path(@group), class: 'main__header__rightbox' do
+      Edit
 
   .messages
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-          taker neme
-        .message__upper-info__date
-          20xx/xx/xx
-      .message__text
-        message text
+    = render @messages
 
   .form
-    %form
-      %input.form__message
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
       .form__mask
-        %label.form__mask__image
+        = f.label :image, class: 'form__mask__image' do
           = fa_icon 'picture-o', class: 'icon'
-          %input.hidden{type: 'file'}
-      %input.form__submit{type: 'submit', value: 'Send'}
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
