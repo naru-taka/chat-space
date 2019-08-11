@@ -4,9 +4,13 @@
   .main__header
     .main__header__leftbox
       .main__header__leftbox__current-group
-        current group name
+        = @group.name
       .main__header__leftbox__member-list
-        current menbers name    
+        Member :
+        - @group.users.each do |user|
+          = user.name
+          
+        
     
     = link_to edit_group_path(@group), class: 'main__header__rightbox' do
       Edit
@@ -15,10 +19,12 @@
     = render @messages
 
   .form
-    = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .form__mask
-        = f.label :image, class: 'form__mask__image' do
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+    = form_for [@group, @message], class: 'form__box' do |f|
+      .form_input_box
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        .send_btn
+          = f.submit 'Send', class: 'form__submit'
