@@ -18,8 +18,8 @@ $(function(){
                       ${imagehtml}
                     </div>
                   </div> `
-      return html;
-    };
+    return html;
+    
   }
 
   $('.js-form').on('submit', function(e){
