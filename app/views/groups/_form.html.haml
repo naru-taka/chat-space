@@ -27,6 +27,7 @@
       チャットメンバー
     .chat-group-form__field--right
       #search-users
+      -# = f.collection_check_boxes :user_ids, User.all, :id, :name
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
