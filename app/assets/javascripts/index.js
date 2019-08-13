@@ -37,7 +37,7 @@ $(function() {
   });
 
   function clickHTML(user){
-    var userId = user.attr("data-user-id");
+    var userId = user.data("user-id");
     var html = `<div class='chat-group-user clearfix js-chat-member' id='${userId}'>
                   <input name='group[user_ids][]' type='hidden' value="${userId}">
                   <p class='chat-group-user__name'>${user.attr("data-user-name")}</p>
