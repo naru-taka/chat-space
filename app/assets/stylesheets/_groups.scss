@@ -3,9 +3,14 @@
   height: calc(100vh - 100px);
   padding: 20px 20px 0;
   box-sizing: border-box;
+  & a {
+    text-decoration: none;
+  }
+  & a:visited {
+    color: $White;
+  }
 
   &__group-name{
-    color: $White;
     font-size: 15px;
     padding: 5px;
   }
