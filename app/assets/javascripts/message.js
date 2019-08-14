@@ -22,12 +22,12 @@ $(function(){
     
   }
 
-  $('.js-form').on('submit', function(e){
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action')
+    var href = window.location.href
     $.ajax({
-      url: url,
+      url: href,
       type: "POST",
       data: formData,
       dataType: 'json',
@@ -37,12 +37,14 @@ $(function(){
       .done(function(data){
         var html = buildHTML(data);
         $('.messages').append(html);
+        $( ".form__submit").prop( "disabled", false );
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-        $('form')[0].reset();
+        $('form__message').val('');
+        $('.hidden').val('');
       })
       .fail(function(){
         alert('error');
       });
-      return false;
+      
   })
 });
