@@ -59,21 +59,20 @@ $(function() {
     $input.parent().remove();
   });
 
-
   
   function addNewMessagesHTML(comment){
     var imagehtml = comment.image == null ? "" : `<img src="${comment.image}" class="lower-message__image">`
     var html = `
                  <div class = "message" data-messageid="${comment.id}">
-                   <div class = "upper-message">
-                     <div class = "upper-message__user-name">
+                   <div class = "message__upper-info">
+                     <div class = "message__upper-info__talker">
                      ${comment.name}
                      </div>
-                     <div class = "upper-message__date">
+                     <div class = "message__upper-info__date">
                      ${comment.date}
                      </div>
                    </div>
-                   <div class = "lower-message">
+                   <div class = "message__text">
                      <p class="lower-message__content">
                      ${comment.content}
                      </p>

@@ -16,8 +16,10 @@
   }
   &__action {
     float: right;
-    font-size: 16px;
     line-height: 100px;
+    & a {
+      font-size: 16px;
+    }
     &__group {
       float: left;
       .icon {

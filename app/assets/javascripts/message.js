@@ -3,15 +3,15 @@ $(function(){
   function buildHTML(message){
     var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="lower-message__image">`
     var html = `<div class=message>
-                    <div class="upper-message">
-                      <div class="upper-message__user-name">
+                    <div class="message__upper-info">
+                      <div class="message__upper-info__talker">
                       ${message.user_name}
                       </div>
-                      <div class="upper-message__date">
+                      <div class="message__upper-info__date">
                       ${message.created_at}
                       </div>
                     </div>
-                    <div class="lower-message">
+                    <div class="message__text">
                       <p class="lower-message__content">
                       ${message.content}
                       </p>
@@ -34,17 +34,17 @@ $(function(){
       processData: false,
       contentType: false
     })
-      .done(function(data){
-        var html = buildHTML(data);
-        $('.messages').append(html);
-        $( ".form__submit").prop( "disabled", false );
-        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-        $('form__message').val('');
-        $('.hidden').val('');
-      })
-      .fail(function(){
-        alert('error');
-      });
-      
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.messages').append(html);
+      $( ".form__submit").prop( "disabled", false );
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      $('form__message').val('');
+      $('.hidden').val('');
+    })
+    .fail(function(){
+      alert('error');
+    });
+    
   })
 });
