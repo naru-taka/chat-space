@@ -1,19 +1,24 @@
-.groups{
+.groups {
   background-color: #2f3e51;
   height: calc(100vh - 100px);
   padding: 20px 20px 0;
   box-sizing: border-box;
-
-  &__group-name{
-    color: $White;
-    font-size: 15px;
-    padding: 5px;
+  & a {
+    text-decoration: none;
   }
-  &__group__message{
+  & a:visited {
     color: $White;
-    font-size: 11px;
-    padding: 40px;
   }
-
-
+  .groups {
+    margin-bottom: 40px;
+    &__group-name {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    &__group-message {
+      font-size: 11px;
+    }
+  }
 }
+
+

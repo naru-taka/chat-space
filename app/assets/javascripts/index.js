@@ -58,4 +58,57 @@ $(function() {
     $input = $(this);
     $input.parent().remove();
   });
+
+  
+  function addNewMessagesHTML(comment){
+    var imagehtml = comment.image == null ? "" : `<img src="${comment.image}" class="lower-message__image">`
+    var html = `
+                 <div class = "message" data-messageid="${comment.id}">
+                   <div class = "message__upper-info">
+                     <div class = "message__upper-info__talker">
+                     ${comment.name}
+                     </div>
+                     <div class = "message__upper-info__date">
+                     ${comment.date}
+                     </div>
+                   </div>
+                   <div class = "message__text">
+                     <p class="lower-message__content">
+                     ${comment.content}
+                     </p>
+                     ${imagehtml}
+                   </div>
+                 </div>
+                `
+    return html;
+  };
+
+
+  if (window.location.href.match(/\/groups\/\d+\/messages/)){
+       setInterval(autoUpdate,8000)
+  };
+
+  function autoUpdate() {
+    var href = window.location.href;
+    var lastId = $('.message').last().attr('data-messageid');
+
+    $.ajax({
+      url: href,
+      dataType:'json',
+      type:'GET',
+    })
+
+    .done(function(data) {
+       data.messages.forEach(function(message){
+         if (message.id > lastId){
+           var html = addNewMessagesHTML(message);
+           $('.messages').append(html);
+           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+         };
+       });
+    })
+    .fail(function(){
+      alert('error');
+    });
+  };
 });
