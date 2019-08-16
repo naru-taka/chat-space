@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'naru-taka'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/naru-taka'
+  config.asset_host = 'https://naru-taka.s3.amazonaws.com'
 end
