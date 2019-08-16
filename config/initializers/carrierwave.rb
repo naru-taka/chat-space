@@ -12,6 +12,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'naru-taka'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/naru-taka'
+  config.fog_directory  = 'upload-naru'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/upload-naru'
 end
