@@ -36,19 +36,19 @@ $(function(){
     })
     .done(function(data){
       
-      if (data.content === nil){
+      // if (data.content === nil){
       
-      alert('error');
-      $( ".form__submit").prop( "disabled", false );
-      }
-      else{
+      // alert('error');
+      // $( ".form__submit").prop( "disabled", false );
+      // }
+      // else{
       var html = buildHTML(data);
       $('.messages').append(html);
       $( ".form__submit").prop( "disabled", false );
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       $('form__message').val('');
       $('.hidden').val('');
-      }
+      // }
     })
     .fail(function(){
       alert('error');
