@@ -60,32 +60,30 @@ $(function() {
   });
 
   
-  function addNewMessagesHTML(comment){
-    var imagehtml = comment.image == null ? "" : `<img src="${comment.image}" class="lower-message__image">`
-    var html = `
-                 <div class = "message" data-messageid="${comment.id}">
-                   <div class = "message__upper-info">
-                     <div class = "message__upper-info__talker">
-                     ${comment.name}
-                     </div>
-                     <div class = "message__upper-info__date">
-                     ${comment.date}
-                     </div>
-                   </div>
-                   <div class = "message__text">
-                     <p class="lower-message__content">
-                     ${comment.content}
-                     </p>
-                     ${imagehtml}
-                   </div>
-                 </div>
-                `
+  function addNewMessagesHTML(message){
+    var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="lower-message__image">`;
+    var html = `<div class = "message" data-messageid="${message.id}">
+                    <div class = "message__upper-info">
+                      <div class = "message__upper-info__talker">
+                      ${message.user_name}
+                      </div>
+                      <div class = "message__upper-info__date">
+                      ${message.created_at}
+                      </div>
+                    </div>
+                    <div class = "message__text">
+                      <p class="lower-message__content">
+                      ${message.content}
+                      </p>
+                      ${imagehtml}
+                    </div>
+                </div>`
     return html;
   };
 
 
   if (window.location.href.match(/\/groups\/\d+\/messages/)){
-       setInterval(autoUpdate,8000)
+    setInterval(autoUpdate,8000)
   };
 
   function autoUpdate() {

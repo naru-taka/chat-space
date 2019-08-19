@@ -1,8 +1,8 @@
 $(function(){
 
   function buildHTML(message){
-    var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="lower-message__image">`
-    var html = `<div class=message>
+    var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="lower-message__image">`;
+    var html = `<div class = "message" data-messageid="${message.id}">
                     <div class="message__upper-info">
                       <div class="message__upper-info__talker">
                       ${message.user_name}
@@ -17,7 +17,7 @@ $(function(){
                       </p>
                       ${imagehtml}
                     </div>
-                  </div> `
+                </div> `
     return html;
     
   }
@@ -35,8 +35,8 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      
-      // if (data.content === nil){
+      // console.log(data)
+      // if (data.content == ""){
       
       // alert('error');
       // $( ".form__submit").prop( "disabled", false );
@@ -52,7 +52,7 @@ $(function(){
     })
     .fail(function(){
       alert('error');
-    });
+    })
     
   })
 });
