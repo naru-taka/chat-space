@@ -97,13 +97,13 @@ $(function() {
     })
 
     .done(function(data) {
-       data.messages.forEach(function(message){
-         if (message.id > lastId){
-           var html = addNewMessagesHTML(message);
-           $('.messages').append(html);
-           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-         };
-       });
+      data.messages.forEach(function(message){
+        if (message.id > lastId){
+          var html = addNewMessagesHTML(message);
+          $('.messages').append(html);
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        };
+      });
     })
     .fail(function(){
       alert('error');
